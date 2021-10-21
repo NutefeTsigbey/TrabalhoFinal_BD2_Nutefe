@@ -1,0 +1,68 @@
+/* body {
+    background: red;
+} */
+
+.logo{
+    width: 60%;
+}
+
+.menuAllusr {
+    background: #ffffff repeat left top;
+    right: 0px;
+    height: 40%;
+    top: 55px;
+    position: fixed;
+    width: 20%;
+	overflow-y:auto; 
+	overflow-x: hidden;
+}
+.menuAllusr h3 {
+    color: rgba(0, 0, 0, 0)
+}
+.menuAllusr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menuAllusr li {
+    line-height: 45px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 3px;
+}
+.menuAllusr a {
+    color: rgba(0, 0, 0, 0.24);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+.menuAmg {
+    background: #ffffff repeat left top;
+    right: 0px;
+    height: 40%;
+    bottom: 20px;
+    position: fixed;
+    width: 20%;
+	overflow-y:auto; 
+	overflow-x: hidden;
+}
+.menuAmg h3 {
+    color: #000
+}
+.menuAmg ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menuAmg li {
+    line-height: 45px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 3px;
+}
+.menuAmg a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+}

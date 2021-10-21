@@ -1,0 +1,60 @@
+<div class="row" style="width:80%;">
+    {{#each notes}}
+        <div class="col-md-3">
+            <div class="card mt-2">
+				{{#if isPageUser}}
+					<div class="card-body">
+						<h4 class="card-title d-flex justify-content-between align-items-center">
+							{{title}} <a href="/notes/edit/{{_id}}"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+						</h4>
+						<p>{{description}}</p>
+						<p>Created by: {{usrName}}</p>
+						<form action="/notes/delete?_method=DELETE&id={{_id}}&usrId={{user}}" method="POST">
+							<button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+						</form>
+					</div>
+				{{else}}
+					<div class="card-body">
+						<h4 class="card-title d-flex justify-content-between align-items-center">
+							{{title}}
+						</h4>
+						<p>{{description}}</p>
+						<p>Created by: {{usrName}}</p>
+					</div>
+				{{/if}}
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<div class="menuAllusr">
+    <div>
+		<h3 style="text-align:center">Todos Usuários</h3>
+    </div>
+    <ul>
+		{{#each usuarios}}
+			<li class="row">
+				<a class="mr-1" href="/notes/{{id}}"><img src="data:image/jpeg;base64,{{perfilPhoto}}" alt="foto de perfil" style="width:50px;"> {{name}}</a>
+				<form action="/users/addAmigo?_method=POST&param1={{currentUserId}}&param2={{id}}" method="POST">
+					<button type="submit" class="btn btn-primary btn-sm">Adicionar</button>
+				</form>
+			</li>
+		{{/each}}
+    </ul>
+</div>
+
+<div class="menuAmg">
+    <div>
+		<h3 style="text-align:center">Meus amigos</h3>
+    </div>
+    <ul>		
+		{{#each amigos}}
+			<li class="row">
+				<a class="mr-1" href="/notes/{{id}}"><img src="data:image/jpeg;base64,{{perfilPhoto}}" alt="foto de perfil" style="width:50px;"> {{name}}</a>
+				<form action="/users/removerAmigo?_method=POST&param1={{currentUserId}}&param2={{id}}" method="POST">
+					<button type="submit" class="btn btn-danger btn-sm">Remover</button>
+				</form>
+			</li>
+		{{/each}}
+    </ul>
+</div>
